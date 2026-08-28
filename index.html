@@ -3,31 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free open-source AI Prompt Generator for social media, images, videos, writing, and creative projects." />
   <title>AI Prompt Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
-    <h1>AI Prompt Generator</h1>
-    <p>Create ready-to-use prompts for social media, images, and videos.</p>
 
-    <label for="category">Choose a category</label>
-    <select id="category">
-      <option value="facebook">Facebook Post</option>
-      <option value="tiktok">TikTok Content</option>
-      <option value="image">AI Image</option>
-      <option value="video">AI Video</option>
-      <option value="gardening">Gardening</option>
-    </select>
+    <div class="top-bar">
+      <div>
+        <h1>AI Prompt Generator</h1>
+        <p class="subtitle">
+          Create better prompts for social media, images, videos, writing, and creative projects.
+        </p>
+      </div>
 
-    <label for="topic">Enter a topic</label>
-    <input id="topic" type="text" placeholder="Example: Tomato growing tips" />
+      <button id="themeToggle" class="theme-button" type="button">
+        🌙 Dark
+      </button>
+    </div>
 
-    <button onclick="generatePrompt()">Generate Prompt</button>
+    <div class="grid">
 
-    <textarea id="output" rows="12" readonly></textarea>
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="facebook">Facebook Post</option>
+          <option value="tiktok">TikTok Content</option>
+          <option value="youtube">YouTube Content</option>
+          <option value="image">AI Image</option>
+          <option value="video">AI Video</option>
+          <option value="blog">Blog Writing</option>
+          <option value="seo">SEO Content</option>
+          <option value="product">Product Description</option>
+          <option value="email">Email Writing</option>
+          <option value="gardening">Gardening</option>
+          <option value="education">Educational Content</option>
+          <option value="coding">Coding</option>
+        </select>
+      </div>
 
-    <button onclick="copyPrompt()">Copy Prompt</button>
+      <div class="field">
+        <label for="tone">Tone</label>
+        <select id="tone">
+          <option value="professional">Professional</option>
+          <option value="friendly">Friendly</option>
+          <option value="viral">Viral</option>
+          <option value="educational">Educational</option>
+          <option value="persuasive">Persuasive</option>
+          <option value="simple">Simple</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="length">Prompt Detail</label>
+        <select id="length">
+          <option value="short">Short</option>
+          <option value="medium" selected>Medium</option>
+          <option value="detailed">Detailed</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="language">Output Language</label>
+        <select id="language">
+          <option value="English">English</option>
+          <option value="Burmese">Burmese</option>
+          <option value="Thai">Thai</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Korean">Korean</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="field">
+      <label for="topic">Topic</label>
+
+      <div class="topic-row">
+        <input
+          id="topic"
+          type="text"
+          placeholder="Example: Tomato growing tips"
+        />
+
+        <button id="ideaButton" class="secondary-button" type="button">
+          🎲 Random Idea
+        </button>
+      </div>
+    </div>
+
+    <button id="generateButton" class="primary-button" type="button">
+      ✨ Generate Prompt
+    </button>
+
+    <div class="output-header">
+      <label for="output">Generated Prompt</label>
+      <span id="status"></span>
+    </div>
+
+    <textarea
+      id="output"
+      rows="14"
+      readonly
+      placeholder="Your generated prompt will appear here..."
+    ></textarea>
+
+    <div class="action-row">
+      <button id="copyButton" class="secondary-button" type="button">
+        📋 Copy Prompt
+      </button>
+
+      <button id="clearButton" class="secondary-button" type="button">
+        🗑 Clear
+      </button>
+    </div>
+
+    <footer>
+      <p>
+        Free and open-source. Built with HTML, CSS and JavaScript.
+      </p>
+    </footer>
+
   </main>
 
   <script src="script.js"></script>
