@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Prompt Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>AI Prompt Generator</h1>
+    <p>Create ready-to-use prompts for social media, images, and videos.</p>
+
+    <label for="category">Choose a category</label>
+    <select id="category">
+      <option value="facebook">Facebook Post</option>
+      <option value="tiktok">TikTok Content</option>
+      <option value="image">AI Image</option>
+      <option value="video">AI Video</option>
+      <option value="gardening">Gardening</option>
+    </select>
+
+    <label for="topic">Enter a topic</label>
+    <input id="topic" type="text" placeholder="Example: Tomato growing tips" />
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <textarea id="output" rows="12" readonly></textarea>
+
+    <button onclick="copyPrompt()">Copy Prompt</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
